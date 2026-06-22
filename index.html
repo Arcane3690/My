@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나를 소개합니다 | 포트폴리오</title>
+    <style>
+        /* 기본 스타일 리셋 및 폰트 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* 네비게이션 바 */
+        header {
+            background: #fff;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3182ce;
+        }
+
+        /* 섹션 공통 스타일 */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: #2d3748;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #3182ce;
+            margin: 10px auto 0;
+        }
+
+        /* 홈 섹션 (히어로 배너) */
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh;
+            background: linear-gradient(135deg, #ebf8ff 0%, #cee3f8 100%);
+            max-width: 100%;
+        }
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #2b6cb0;
+        }
+        #home p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        /* 프로필 섹션 */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: #e2e8f0; /* 실제 이미지 없을 때의 대체 배경 */
+            object-fit: cover;
+            margin: 0 auto;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* 프로젝트 섹션 (카드 레이아웃) */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        /* 연락처 섹션 */
+        #contact {
+            text-align: center;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 10px 20px;
+            background: #3182ce;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .contact-links a:hover {
+            background: #2b6cb0;
+        }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #2d3748;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* 모바일 반응형 조정 */
+        @media (max-width: 768px) {
+            #home h1 { font-size: 2.2rem; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">My Portfolio</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <h1>안녕하세요, 윤민석입니다.</h1>
+        <p>열정적으로 성장하는 게임 QA입니다.</p>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <img src="https://via.placeholder.com/250" alt="프로필 사진" class="profile-img">
+            <div class="about-text">
+                <h3>끊임없이 도전하는 무한동력 가득한 사람</h3>
+                <p style="margin-top: 15px;">
+                    여기에 본인에 대한 소개글을 적어보세요. 어떤 가치관을 가지고 일하는지, 어떤 기술이나 분야에 관심이 많은지 적으면 좋습니다.
+                </p>
+                <p style="margin-top: 10px;">
+                    💡 <strong>Skill Stack:</strong> HTML, CSS, JavaScript, Git
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>프로젝트 제목 1</h3>
+                    <p>이 프로젝트는 무엇을 위해 만들어졌고 어떤 기능을 담당하는지 간단히 설명하는 칸입니다.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>프로젝트 제목 2</h3>
+                    <p>HTML/CSS를 활용해 만든 반응형 웹사이트나, 본인이 참여했던 멋진 작업물을 자랑해보세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>함께 성장할 기회를 찾고 계신다면 언제든 연락주세요!</p>
+        <div class="contact-links">
+            <a href="mailto:younju3690@naver.com">Email 보내기</a>
+            <a href="https://github.com/younju3690@naver.com" target="_blank">GitHub 방문</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 윤민석. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
